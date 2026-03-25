@@ -1,0 +1,130 @@
+/* 1. Base Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('bg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column; /* Stack navbar on top of the form */
+}
+
+/* 2. Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(255, 255, 255, 0.1); /* Frosted glass look */
+    backdrop-filter: blur(10px);
+    width: 100%;
+}
+
+.nav-section { flex: 1; }
+
+.logo {
+    text-align: center;
+    font-weight: 700;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff !important; /* Overriding the inline style */
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 25px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Navbar Buttons */
+.menu .btn {
+     text-decoration: none;
+    width: auto; /* Overriding global .btn width */
+    padding: 8px 20px;
+    height: auto;
+    font-size: 14px;
+    margin-left: 10px;
+
+}
+
+/* 3. Centering the Login Form */
+.spotify {
+    flex: 1; /* Takes up remaining height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.home {
+    width: 420px;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    color: #fff;
+    padding: 30px 40px;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 4. Form Elements */
+.home h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    outline: none;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.input-box input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+/* Global Button Style */
+.btn {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e0e0e0;
+    transform: translateY(-2px);
+}
+
