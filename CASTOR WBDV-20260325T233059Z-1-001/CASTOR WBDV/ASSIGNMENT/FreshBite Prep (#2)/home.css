@@ -1,0 +1,221 @@
+/* --- Global Reset --- */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* --- Navbar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    border-bottom: 1px solid #ddd;
+    background-color: #222;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    color: #ffffff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    
+    
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.login-trigger {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* --- Workflow Bar --- */
+.workflow {
+    padding: 15px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #000000;
+    border: none;
+}
+
+.active {
+    color: #ff4757;
+    font-weight: bold;
+}
+
+/* --- Main Layout --- */
+.container {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 40px 0;
+}
+
+/* --- Simple Gallery & Cards --- */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    width: 280px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.price {
+    font-weight: bold;
+    color: #ff4757;
+    margin: 5px 0;
+}
+
+.macros {
+    font-size: 0.75rem;
+    color: #777;
+    margin: 10px 0;
+}
+
+.buy-btn {
+    width: 100%;
+    background-color: #222;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Featured plan indicator - just a border, no effect */
+
+
+/* --- Billing Table --- */
+.table-container {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.billing-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.billing-table th, .billing-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.billing-table th {
+    background-color: #fafafa;
+    font-size: 0.8rem;
+}
+
+.status-paid {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+/* --- Side Drawer --- */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    z-index: 100;
+}
+
+.overlay.active {
+    display: block;
+}
+
+.drawer {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 300px;
+    height: 100%;
+    background: #fff;
+    padding: 20px;
+    transition: 0.3s;
+    z-index: 101;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+}
+
+.drawer.open {
+    right: 0;
+}
+
+.close-btn {
+    cursor: pointer;
+    float: right;
+    font-size: 1.5rem;
+}
+
+.drawer label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.drawer input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

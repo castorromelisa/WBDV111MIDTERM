@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshBite Prep | Professional Meal Delivery</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+     <nav class="navbar">
+        <p class="logo">FreshBite Prep</p>
+        <ul class="nav-links"> 
+            <li><a href="home.html">Meals</a></li>
+            <li><a href="plans.html">Plans</a></li>
+            <li><a href="billing.html">Billing</a></li>
+        </ul>
+        <button class="login-trigger" onclick="toggleDrawer()">Login</button>
+    </nav>
+  <div class="workflow">
+        <div class="steps">
+            Select Diet Type &rarr; <span class="active">Choose Weekly Meals</span> &rarr; Enter Delivery &rarr; View Macros
+        </div>
+    </div>
+     <div class="container">
+ <section id="billing-section">
+            <h2 class="section-title">Recent Billing</h2>
+            <div class="table-container">
+                <table class="billing-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Item/Plan</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="billing-body">
+                        <tr>
+                            <td>Oct 24, 2023</td>
+                            <td>Account Setup</td>
+                            <td>$0.00</td>
+                            <td><span class="status-paid">Paid</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div> 
+ <div class="overlay" id="overlay" onclick="toggleDrawer()"></div>
+    <div class="drawer" id="drawer">
+        <span class="close-btn" onclick="toggleDrawer()">&times;</span>
+        <h2 style="margin-top: 40px;">Account Login</h2>
+        <form onsubmit="event.preventDefault(); alert('Logged in!'); toggleDrawer();">
+            <label>Email Address</label>
+            <input type="email" placeholder="email@example.com" required>
+            <label>Password</label>
+            <input type="password" placeholder="••••••••" required>
+            <button type="submit" class="buy-btn">Sign In</button>
+        </form>
+    </div>
+
+ <script src="script.js"></script>
+
+</body>
+</html>
