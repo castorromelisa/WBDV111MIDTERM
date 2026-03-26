@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register | ScholarPortal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Scholar<span>Portal</span></div>
+        <div class="nav-links">
+            <a href="course.html">Courses</a>
+            <a href="register.html" class="active">Register</a>
+            <a href="profile.html">Profile</a>
+            <a href="login.html" class="logout-btn">Log Out</a>
+        </div>
+    </nav>
+
+    <main class="desk">
+        <div class="folder">
+            <div class="folder-tab">FEES & BILLING</div>
+            <div class="folder-content">
+                <h2>Second Semester Registration</h2>
+                <p><strong>Student:</strong> Romelisa Patricia T. Castor</p>
+                <hr>
+                <div class="fee-card">
+                    <div class="fee-row">
+                        <span>Outstanding Balance:</span>
+                        <span class="amount">₱ 1500.00</span>
+                    </div>
+                </div>
+                <button class="pay-btn" onclick="pay()">Process Fee Payment</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function pay() {
+            if(confirm("Confirm payment of ₱ 1500.00")) {
+                alert("Payment Successful! Viewing Transcript...");
+                window.location.href = "profile.html";
+            }
+        }
+    </script>
+</body>
+</html>
