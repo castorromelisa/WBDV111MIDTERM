@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velvet Crust Cakes </title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header class="topbar">
+    <a>Velvet Crust Cake </a>
+    <nav aria-label="Primary">
+      <ul class="menu">
+        <a href="Login.html">Log-out </a>
+      </ul>
+    </nav>
+  </header>
+<header class="hero-container">
+    <p class="welcome-text">WELCOME TO Velvet Crust Cakes</p>
+</header>
+ <div class="order-container">
+    <div class="stepper-glass" id="stepper">
+        <div class="step active" data-step="1"><span>1</span> Browse</div>
+        <div class="step" data-step="2"><span>2</span> Customize</div>
+        <div class="step" data-step="3"><span>3</span> Date</div>
+        <div class="step" data-step="4"><span>4</span> Confirm</div>
+    </div>
+
+    <section id="step-1" class="step-pane active">
+        <div class="masonry-wrapper">
+            <div class="cake-card" onclick="selectCake('Graham Cake')">
+                <img src="https://pinoycupidgifts.com/wp-content/uploads/2021/03/Cookieccino-by-Contis--300x300.jpg" alt="Cake">
+                <div class="cake-info">
+                    <h3>Graham Cake</h3>
+                    <p class="price-tag">$55.00</p>
+                    <button class="btn-cream-sm">Select</button>
+                </div>
+            </div>
+             <div class="cake-card" onclick="selectCake('Mango Bravo')">
+                <img src="https://www.contis.ph/cdn/shop/products/MangoBravo_1.jpg?v=1689558563" alt="Cake">
+                <div class="cake-info">
+                    <h3>Mango Bravo</h3>
+                    <p class="price-tag">$85.00</p>
+                    <button class="btn-cream-sm">Select</button>
+                </div>
+            </div>
+             <div class="cake-card" onclick="selectCake('Ube Cake')">
+                <img src="https://www.contis.ph/cdn/shop/files/555.png?v=1694751289&width=600" alt="Cake">
+                <div class="cake-info">
+                    <h3>Ube Cake </h3>
+                    <p class="price-tag">$100.00</p>
+                    <button class="btn-cream-sm">Select</button>
+                </div>
+            </div>
+             <div class="cake-card" onclick="selectCake('Black Velvet Cake')">
+                <img src="https://www.contis.ph/cdn/shop/products/BlackVelvet.jpg?v=1689558579" alt="Cake">
+                <div class="cake-info">
+                    <h3>Black Velvet Cake</h3>
+                    <p class="price-tag">$150.00</p>
+                    <button class="btn-cream-sm">Select</button>
+                </div>
+            </div>
+             <div class="cake-card" onclick="selectCake('Mango CheeseCake')">
+                <img src="https://www.philflower.com/images/thumbnails/590/590/product/19/MANGO_CHEESECAKE-500x500.jpg" alt="Cake">
+                <div class="cake-info">
+                    <h3>Mango CheeseCake</h3>
+                    <p class="price-tag">$80.00</p>
+                    <button class="btn-cream-sm">Select</button>
+                </div>
+            </div>
+             <div class="cake-card" onclick="selectCake('Banana Dream')">
+                <img src="https://pinoycupidgifts.com/wp-content/uploads/2020/05/Banana-Dream--300x300.jpg" alt="Cake">
+                <div class="cake-info">
+                    <h3>Banana Dream</h3>
+                    <p class="price-tag">$45.00</p>
+                    <button class="btn-cream-sm">Select</button>
+                </div>
+            </div>
+            </div>
+    </section>
+
+    <section id="step-2" class="step-pane">
+        <div class="glass-card centered">
+            <h2>Customize <span id="selected-cake-name"></span></h2>
+            <div class="flavor-grid">
+                <button class="flavor-opt" onclick="nextStep(3)">Salted Caramel</button>
+                <button class="flavor-opt" onclick="nextStep(3)">Vanilla Bean</button>
+                <button class="flavor-opt" onclick="nextStep(3)">No Customize</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="step-3" class="step-pane">
+        <div class="glass-card centered">
+            <h2>Pickup Date</h2>
+            <input type="date" id="pickup-date" class="glass-input">
+            <button class="btn-cream" onclick="nextStep(4)">Continue</button>
+        </div>
+    </section>
+
+    <section id="step-4" class="step-pane">
+        <div class="glass-card centered">
+            <h2>Order Confirmed!</h2>
+            <p>Your Velvet Crust creation is scheduled.</p>
+            <button class="btn-cream" onclick="location.reload()">Start New Order</button>
+        </div>
+    </section>
+</div>
+ <script src="home.js"></script>
+</body>
+</html>

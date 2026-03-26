@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luna Vista Resort</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <header class="topbar">
+    <a class="brand" href="index.html">Luna Vista Resort</a>
+    <nav aria-label="Primary">
+      <ul class="menu">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="Gallery.html">Gallery</a></li>
+        <li><a href="About.html">About Luna Vista</a></li>
+        <li><a href="reservation.html">Reservation</a></li>
+        <li><a href="log-in.html">Log-in </a></li>
+      </ul>
+    </nav>
+  </header>
+
+<div class="rooms-container">
+   <p class="section-title">OUR ROOM OFFER</p>
+    <div class="room-card">
+        <img src="standardroom.jpg" alt="Standard Room">
+        <div class="room-info">
+           <h3>Standard Room</h3>
+        
+        <p class="room-description-text">
+            Our most economical stay, featuring a private bathroom, essential furniture, 
+            and a cozy 200–400 sq. ft. layout. Perfect for budget-conscious travelers 
+            seeking comfort and simplicity.
+        </p>
+            <button class="book-now" data-name="Standard Room" data-price="2500">Book Now</button>
+        </div>
+    </div>
+    <div class="room-card">
+        <img src="deluxe suite.jpg" alt="Deluxe Suite">
+        <div class="room-info">
+            <h3>Deluxe Suite</h3>
+              <p class="room-description-text">
+         our 500–700 sq. ft. suite, featuring a king-sized 
+          bed, premium lounge area, and a private balcony with stunning views. Designed for travelers 
+          seeking refined comfort and extra space.
+        </p>
+            <button class="book-now" data-name="Deluxe Suite" data-price="10000">Book Now</button>
+        </div>
+    </div>
+
+    <div class="room-card">
+        <img src="family villa.webp" alt="Family Villa">
+        <div class="room-info">
+            <h3>Family Villa</h3>
+              <p class="room-description-text">
+            An expansive 1,000+ sq. ft.sanctuary featuring multiple bedrooms, full 
+            kitchenette, and spacious living area. ultimate choice for families 
+           seeking privacy and shared home-like experience.
+        </p>
+            <button class="book-now" data-name="Family Villa" data-price="15500">Book Now</button>
+        </div>
+    </div>
+
+<p class="section-title">LOCATION OF RESORT</p>
+
+      <div class="carousel-container">
+        <div class="slide active">
+          <img src="reception.jpg" alt="reception">
+        </div>
+        <div class="slide">
+          <img src="dinning.jpg" alt="dinning">
+        </div>
+        <div class="slide" alt="reception">
+          <img src="pool.jpg" alt="pool">
+        </div>
+
+        <button class="carousel-btn prev" type="button" aria-label="Previous image">&#10094;</button>
+        <button class="carousel-btn next" type="button" aria-label="Next image">&#10095;</button>
+          <button class="dot active" type="button"></button>
+        <button class="dot" type="button"></button>
+        <button class="dot" type="button"></button> 
+      </div>
+
+
+  </div>
+  
+
+
+  <script src="script.js"></script>
+</body>
+</html>
