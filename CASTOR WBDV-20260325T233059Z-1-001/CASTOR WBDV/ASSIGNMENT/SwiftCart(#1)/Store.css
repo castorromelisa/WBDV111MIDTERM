@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
+    padding-top: 80px;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0; width: 100%; z-index: 1000;
+}
+
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 20px; 
+}
+
+.nav-links a { 
+    text-decoration: none; 
+    color: #333; 
+    font-weight: 500; 
+}
+
+#cart-btn {
+    background-color: #7f8c8d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Product Grid */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 40px 5%;
+}
+
+.product {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product img { 
+    width: 100%; height: 200px; 
+    object-fit: contain; 
+    margin-bottom: 15px;
+}
+
+.add-to-cart {
+    background-color: #656666;
+    color: white;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.add-to-cart:hover { background-color: #333; }
+
+/* Modal System */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#cart-items, #checkout-items {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+#cart-items li, #checkout-items li {
+    padding: 10px;
+    background: #f9f9f9;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    border-left: 4px solid #7f8c8d;
+}
+
+/* Forms & Tracking */
+#payment-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+progress {
+    width: 100%;
+    height: 12px;
+    accent-color: #7f8c8d;
+}
