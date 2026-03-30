@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LedgerFlow | Financial Workbench</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <aside class="sidebar">
+    <div class="brand">LEDGER<span>FLOW</span></div>
+    <nav class="nav-stack">
+        <a href="#invoice" class="nav-link active">Invoice Ledger</a>
+        <a href="#client" class="nav-link">Client Registry</a>
+        <a href="#pay" class="nav-link">Pay Dashboard</a>
+        <a href="#export" class="nav-link">Export PDF</a>
+    </nav>
+    
+    <div class="sidebar-footer">
+        <div class="auth-status">
+            <span class="shield-icon">🛡️</span> 2FA ENCRYPTED
+        </div>
+        <a href="index.html" class="nav-link logout-btn">✕ Log Out Session</a>
+    </div>
+</aside>
+
+    <main class="workspace">
+        <section id="invoice" class="view active">
+            <div class="view-header">
+                <h3>Invoice Ledger</h3>
+                <div class="workflow-steps">
+                    <button class="btn-action" onclick="addRow()">+ Add Line</button>
+                    <button class="btn-action alert">Alert Supplier</button>
+                </div>
+            </div>
+            <div class="ledger-container" id="ledger-items">
+                <div class="ledger-row head">
+                    <div>Description</div><div>Qty</div><div>Rate ($)</div><div>Action</div>
+                </div>
+                <div class="ledger-row item-row">
+                    <div><input type="text" value="Financial Systems Audit"></div>
+                    <div><input type="number" class="qty" value="1" oninput="calculate()"></div>
+                    <div><input type="number" class="rate" value="2500" oninput="calculate()"></div>
+                    <div><button class="btn-text" onclick="removeRow(this)">Remove</button></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="client" class="view">
+            <div class="view-header"><h3>Client Registry</h3></div>
+            <div class="ledger-row spreadsheet">
+                <div class="cell-label">Entity Name</div>
+                <div class="cell-input"><input type="text" placeholder="Global Dynamics LLC"></div>
+                <div class="cell-action"><button class="btn-action primary">Commit</button></div>
+            </div>
+            <div class="ledger-row spreadsheet">
+                <div class="cell-label">Tax ID</div>
+                <div class="cell-input"><input type="text" placeholder="VAT-9920-X"></div>
+                <div class="cell-action"><button class="btn-action">Verify</button></div>
+            </div>
+        </section>
+
+        <section id="pay" class="view">
+            <div class="view-header"><h3>Pay Dashboard (Maturity Ledger)</h3></div>
+            <div class="ledger-row head maturity-grid">
+                <div>Client</div><div>Due Date</div><div>Amount</div><div>Status</div>
+            </div>
+            <div class="ledger-row maturity-grid">
+                <div>Nexus Systems</div><div>2026-04-15</div><div class="mono">$12,400.00</div><div><button class="btn-action primary">Settle</button></div>
+            </div>
+            <div class="ledger-row maturity-grid">
+                <div>Astra Corp</div><div>2026-04-20</div><div class="mono">$3,150.00</div><div><button class="btn-action">Pending</button></div>
+            </div>
+        </section>
+
+        <section id="export" class="view">
+            <div class="view-header"><h3>Document Finalization</h3></div>
+            <div class="ledger-row spreadsheet">
+                <div class="cell-label">Secure URL</div>
+                <div class="cell-input mono" id="secureUrl">ledgerflow.io/vault/af92-01x</div>
+                <div class="cell-action"><button class="btn-action" onclick="copyUrl()">Copy Link</button></div>
+            </div>
+            <div class="ledger-row spreadsheet">
+                <div class="cell-label">ISO PDF</div>
+                <div class="cell-input">Package ready for export</div>
+                <div class="cell-action"><button class="btn-action primary" onclick="generatePdf()">Generate PDF</button></div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Navigation logic
+        const navLinks = document.querySelectorAll('.nav-link');
+        const views = document.querySelectorAll('.view');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                // If it's the logout button, allow standard navigation
+                if (link.classList.contains('logout-btn')) return;
+
+                e.preventDefault();
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                
+                const targetId = link.getAttribute('href').replace('#', '');
+                views.forEach(v => {
+                    v.classList.remove('active');
+                    if(v.id === targetId) v.classList.add('active');
+                });
+            });
+        });
+
+        // Dynamic Spreadsheet logic
+        function addRow() {
+            const container = document.getElementById('ledger-items');
+            const newRow = document.createElement('div');
+            newRow.className = 'ledger-row item-row';
+            newRow.innerHTML = `
+                <div><input type="text" placeholder="New Service..."></div>
+                <div><input type="number" class="qty" value="0" oninput="calculate()"></div>
+                <div><input type="number" class="rate" value="0" oninput="calculate()"></div>
+                <div><button class="btn-text" onclick="removeRow(this)">Remove</button></div>
+            `;
+            container.appendChild(newRow);
+        }
+
+        function removeRow(btn) {
+            btn.closest('.ledger-row').remove();
+            calculate();
+        }
+
+        function calculate() {
+            let total = 0;
+            document.querySelectorAll('.item-row').forEach(row => {
+                const q = parseFloat(row.querySelector('.qty').value) || 0;
+                const r = parseFloat(row.querySelector('.rate').value) || 0;
+                total += (q * r);
+            });
+            console.log("Current Ledger Total:", total.toFixed(2));
+        }
+
+        function copyUrl() {
+            const urlText = document.getElementById('secureUrl').innerText;
+            navigator.clipboard.writeText(urlText).then(() => {
+                alert("URL Copied to Clipboard!");
+            });
+        }
+
+        function generatePdf() {
+            alert("ISO PDF Generation Initialized...");
+        }
+    </script>
+</body>
+</html>

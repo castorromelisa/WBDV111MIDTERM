@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LedgerFlow | Secure Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+    <div class="login-card">
+        <div class="brand-center">LEDGER<span>FLOW</span></div>
+        <header class="login-header">
+            <h2>Terminal Access</h2>
+            <p>System Authorization Required</p>
+        </header>
+
+        <form action="home.html">
+            <div class="field-group">
+                <label>Username</label>
+                <input type="text" placeholder="e.g. admin_01" id="user" required>
+            </div>
+            <div class="field-group">
+                <label>Password</label>
+                <input type="password" placeholder="••••••••" required>
+            </div>
+
+            <div class="security-prompt">
+                <span class="icon-2fa">📱</span> 
+                <span id="auth-msg">Waiting for 2FA Hardware Key...</span>
+            </div>
+
+            <button type="submit" class="btn-solid">Authorize & Login</button>
+        </form>
+    </div>
+</body>
+</html>
