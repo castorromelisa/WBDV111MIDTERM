@@ -1,0 +1,651 @@
+/* NEXUS EVENTS: CARTOON CONCEPT THEME */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
+
+:root {
+  --bg-color: #fffdf5;      /* Light paper color */
+  --user-accent: #ff9248;   /* Warm orange for user areas */
+  --ink: #2b2d42;           /* The "outline" color */
+  --pop-pink: #ff85a1;
+  --pop-blue: #72efdd;
+  --pop-green: #b2f2bb;
+  --pop-yellow: #ffee32;
+  --white: #ffffff;
+  --bubble-radius: 25px;
+  --border-thick: 4px solid var(--ink);
+}
+
+/* 1. Global Setup */
+body {
+  background-color: var(--bg-color);
+  font-family: 'Fredoka', sans-serif;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 2. Ticker & Header */
+.ticker {
+  background: var(--ink);
+  color: white;
+  padding: 10px 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  overflow: hidden;
+  white-space: nowrap;
+  border-bottom: var(--border-thick);
+  text-align: center;
+}
+
+.site-header {
+  background: var(--white);
+  border-bottom: var(--border-thick);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--pop-pink);
+  text-decoration: none;
+  text-shadow: 3px 3px 0px var(--ink);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-links a:hover, .nav-links a.active {
+  background: var(--pop-blue);
+  transform: scale(1.1);
+  box-shadow: 4px 4px 0px var(--ink);
+}
+
+/* 3. User Attachment Hub */
+.user-dashboard-mini {
+  background: var(--user-accent);
+  border: var(--border-thick);
+  border-radius: var(--bubble-radius);
+  padding: 20px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 8px 8px 0px var(--ink);
+}
+
+.user-avatar-circle {
+  width: 60px;
+  height: 60px;
+  background: white;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+/* 4. Panels & Cards */
+.panel, .card {
+  background: var(--white);
+  border: var(--border-thick);
+  border-radius: var(--bubble-radius);
+  padding: 30px;
+  box-shadow: 10px 10px 0px var(--ink);
+  margin-bottom: 30px;
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: rotate(-1deg) translateY(-5px);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+/* 5. Buttons */
+.btn {
+  font-family: inherit;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  border: var(--border-thick);
+  border-radius: 50px;
+  cursor: pointer;
+  background: var(--pop-yellow);
+  box-shadow: 5px 5px 0px var(--ink);
+  transition: 0.1s;
+}
+
+.btn:active {
+  transform: translate(5px, 5px);
+  box-shadow: 0px 0px 0px var(--ink);
+}
+
+.btn--alt { background: var(--pop-pink); color: white; }
+.btn--ghost { background: white; }
+
+/* 6. Forms */
+/* FORM GRID REFINEMENT */
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 400px; /* Limits the width of the form */
+  margin: 0 auto;   /* Centers the form inside its panel */
+  text-align: left;
+}
+
+.form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.form-grid input {
+  padding: 15px 20px;
+  border: var(--border-size) solid var(--ink);
+  border-radius: 15px;
+  font-family: inherit;
+  font-size: 1rem;
+  background: var(--white);
+  box-shadow: inset 4px 4px 0px rgba(0,0,0,0.05); /* Subtle inner depth */
+  transition: all 0.2s;
+}
+
+.form-grid input:focus {
+  outline: none;
+  background: #fff;
+  transform: scale(1.02); /* Slight "pop" when typing */
+}
+
+/* Button sizing inside the form */
+.btn--big {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  border: 3px solid var(--ink);
+  border-radius: 15px;
+  margin-top: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+  background: var(--pop-green);
+}
+
+/* 7. Animations */
+.pulse {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 40px 0;
+  background: var(--ink);
+  color: white;
+  margin-top: 50px;
+}
+
+.pill {
+  background: var(--pop-pink);
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: inline-block;
+}
+/* --- EVENTS CALENDAR FIXES --- */
+
+/* 1. The Search & Filter Dashboard */
+.filter-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+  padding-bottom: 25px;
+  border-bottom: 4px dashed var(--ink); /* "Tear-off" flyer effect */
+}
+
+input[data-search] {
+  width: 100%;
+  max-width: 500px; /* Keeps it from being too wide */
+  padding: 15px 25px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: var(--border-thick);
+  border-radius: 15px;
+  background: var(--white);
+  box-shadow: inset 4px 4px 0px rgba(0,0,0,0.05);
+  outline: none;
+}
+
+input[data-search]:focus {
+  background: #fff;
+  transform: scale(1.01);
+  border-color: var(--pop-blue);
+}
+
+/* 2. Filter Buttons */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.filter-buttons button {
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  padding: 10px 22px;
+  border: 3px solid var(--ink);
+  border-radius: 50px;
+  background: var(--white);
+  transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.filter-buttons button:hover, 
+.filter-buttons button.active {
+  background: var(--pop-yellow);
+  transform: translateY(-4px);
+  box-shadow: 4px 4px 0px var(--ink);
+}
+
+/* 3. Event Cards Layout */
+.card[data-event-card] {
+  display: flex;
+  flex-direction: column;
+  min-height: 380px; /* Keeps cards uniform */
+}
+
+.card h3 {
+  margin: 10px 0;
+  font-size: 1.6rem;
+}
+
+.card p {
+  flex-grow: 1; /* Pushes tags and button to the bottom */
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* 4. Tags & Badges */
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tag {
+  background: var(--pop-green);
+  border: 2px solid var(--ink);
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Make every other tag a different color for the cartoon vibe */
+.tag:nth-child(even) {
+  background: var(--pop-blue);
+}
+
+/* 5. The Date "Sticker" Badge */
+.badge {
+  display: inline-block;
+  align-self: flex-start;
+  background: var(--pop-pink);
+  color: white;
+  padding: 6px 15px;
+  border-radius: 12px;
+  border: 3px solid var(--ink);
+  font-weight: 700;
+  transform: rotate(-5deg); /* Tilt it like a real sticker */
+  margin-bottom: 15px;
+}
+/* NEXUS EVENTS: MASTER CARTOON THEME */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
+
+:root {
+  --bg-color: #fffdf5;      
+  --user-accent: #ff9248;   
+  --ink: #2b2d42;           
+  --pop-pink: #ff85a1;
+  --pop-blue: #72efdd;
+  --pop-green: #b2f2bb;
+  --pop-yellow: #ffee32;
+  --white: #ffffff;
+  --bubble-radius: 25px;
+  --border-thick: 4px solid var(--ink);
+}
+
+/* 1. Global Setup */
+body {
+  background-color: var(--bg-color);
+  font-family: 'Fredoka', sans-serif;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 2. Components: Header & Ticker */
+.ticker {
+  background: var(--ink);
+  color: white;
+  padding: 10px 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.site-header {
+  background: white;
+  border-bottom: var(--border-thick);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--pop-pink);
+  text-decoration: none;
+  text-shadow: 3px 3px 0px var(--ink);
+}
+
+.nav-links a {
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--ink);
+  transition: 0.2s;
+}
+
+.nav-links a.active, .nav-links a:hover {
+  background: var(--pop-blue);
+  border: 3px solid var(--ink);
+}
+
+/* 3. Panels & Cards (The "Cartoon" Containers) */
+.panel, .card {
+  background: white;
+  border: var(--border-thick);
+  border-radius: var(--bubble-radius);
+  box-shadow: 8px 8px 0px var(--ink);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+  transform: scale(1.02) rotate(-1deg);
+}
+
+/* 4. Grid System */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* 5. Forms (Email/Password Fix) */
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 450px;
+}
+
+.form-grid label {
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+input, select, textarea {
+  padding: 12px 15px;
+  border: 3px solid var(--ink);
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--pop-blue);
+  background: #fff;
+}
+
+/* 6. Buttons */
+.btn {
+  display: inline-block;
+  background: var(--pop-yellow);
+  border: 3px solid var(--ink);
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--ink);
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0px var(--ink);
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px 0px var(--ink);
+}
+
+.btn--ghost { background: white; }
+.btn--alt { background: var(--pop-blue); }
+.btn--big { width: 100%; font-size: 1.1rem; padding: 15px; }
+
+/* 7. Specific Fixes: Tickets & Attendance */
+.badge {
+  display: inline-block;
+  background: var(--pop-pink);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 10px;
+  border: 2px solid var(--ink);
+  font-weight: 700;
+  transform: rotate(-3deg); /* Sticker look */
+  margin-bottom: 10px;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tag {
+  background: var(--pop-green);
+  border: 2px solid var(--ink);
+  padding: 3px 10px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Attendance Pass Area */
+.qr-container {
+  background: white;
+  display: inline-block;
+  padding: 20px;
+  border: 4px dashed var(--ink);
+  border-radius: 20px;
+  margin: 15px 0;
+}
+
+.status {
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-weight: 700;
+  border: 2px solid var(--ink);
+}
+.status--green { background: var(--pop-green); }
+
+/* --- VENUE SPECIFIC FIXES --- */
+
+/* Blueprint/Map Container */
+.venue-map-container {
+  background: white;
+  border: 4px dashed var(--ink); /* "Architectural blueprint" look */
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.05);
+}
+
+.venue-map-container svg {
+  width: 100%;
+  height: auto;
+  max-width: 900px;
+  filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.1));
+}
+
+/* Amenities Grid Fix */
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 2rem;
+}
+
+/* "Tonight's Flow" Schedule Cards */
+.schedule-card {
+  border-left: 8px solid var(--pop-blue); /* Visual indicator for time */
+  padding: 1.5rem;
+  background: var(--white);
+}
+
+.schedule-card h3 {
+  color: var(--pop-pink);
+  margin: 0 0 5px 0;
+  font-size: 1.4rem;
+}
+
+.schedule-card p {
+  margin: 0;
+  font-weight: 600;
+}
+/* --- CONTACT PAGE SPECIFIC FIXES --- */
+
+/* Layout wrapper for Form + Info Panel */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr; /* Form gets more space than the side panel */
+  gap: 30px;
+  align-items: start;
+}
+
+/* Contact Grid Layout */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr; /* Form is wider than the info panel */
+  gap: 30px;
+  align-items: stretch;
+}
+
+/* Form Styling */
+.form-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Input boxes styling */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  padding: 15px;
+  border: 4px solid var(--ink);
+  border-radius: 15px;
+  font-family: inherit;
+  font-size: 1rem;
+  background: white;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Responsive fix for smaller screens */
+@media (max-width: 800px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}

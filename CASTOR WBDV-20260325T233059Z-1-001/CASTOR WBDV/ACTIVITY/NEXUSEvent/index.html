@@ -1,0 +1,113 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Events | Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="home">
+  <div class="ticker">
+    <span>NEW DROP: NEXUS NOISE WEEKENDER · TICKETS LIVE · VENUE MAP UPDATED · POP-UP MERCH LAB · JOIN THE SQUAD ·</span>
+  </div>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html">Nexus Events</a>
+      <nav class="nav-links">
+        <a href="index.html" data-nav="home" class="active">Home</a>
+        <a href="events.html" data-nav="events">Events</a>
+        <a href="tickets.html" data-nav="tickets">Tickets</a>
+        <a href="attendance.html" data-nav="attendance">Check-In</a>
+        <a href="venue.html" data-nav="venue">Venue</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </nav>
+      
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <section class="user-dashboard-mini pulse">
+      <div class="user-avatar-circle">🌟</div>
+      <div class="user-info">
+        <h2 style="margin:0;">Hey there, Nexus Star!</h2>
+        <p style="margin:0;">You have <strong>1 upcoming ticket</strong>. Ready to vibe?</p>
+      </div>
+      <div style="margin-left: auto;">
+        <a href="attendance.html" class="btn btn--ghost">My QR Pass</a>
+      </div>
+    </section>
+
+    <section class="panel hero" style="display: flex; align-items: center; gap: 40px; margin-top: 2rem;">
+      <div style="flex: 1;">
+        <h1 style="font-size: 3.5rem; line-height: 1;">Where energy and art collide.</h1>
+        <p style="font-size: 1.2rem; margin: 20px 0;">Join the most vibrant community of creators and music lovers in the city.</p>
+        <div style="display: flex; gap: 15px;">
+          <a href="events.html" class="btn">Explore Events</a>
+          <a href="tickets.html" class="btn btn--alt">Get Tickets</a>
+        </div>
+      </div>
+      <div style="flex: 0.8; background: var(--pop-blue); height: 300px; border: 4px solid var(--ink); border-radius: 30px; display: flex; align-items: center; justify-content: center; font-size: 4rem; transform: rotate(2deg);">
+        🎨
+      </div>
+    </section>
+
+    <h2 class="section-title" style="text-align: center; margin: 3rem 0 1.5rem;">The Nexus Experience</h2>
+    <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
+      <article class="card">
+        <div class="user-avatar-circle" style="margin-bottom: 15px; background: var(--pop-pink);">🎵</div>
+        <h3>Live Audio</h3>
+        <p>Experience sets from underground legends and rising stars.</p>
+      </article>
+      <article class="card">
+        <div class="user-avatar-circle" style="margin-bottom: 15px; background: var(--pop-yellow);">🕶️</div>
+        <h3>Pop-Up Labs</h3>
+        <p>Custom merch and interactive art stations at every event.</p>
+      </article>
+      <article class="card">
+        <div class="user-avatar-circle" style="margin-bottom: 15px; background: var(--pop-green);">🤝</div>
+        <h3>Community</h3>
+        <p>Meet the people who are shaping the new creative scene.</p>
+      </article>
+    </div>
+
+    <section style="margin-top: 4rem;">
+      <div class="panel auth-card" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
+        <div class="panel">
+          <h2 style="text-align: center;">Log In</h2>
+          <p>Jump back into your saved events.</p>
+          <form class="form-grid">
+            <label>Email <input type="email" placeholder="you@email.com" required></label>
+            <label>Password <input type="password" placeholder="••••••••" required></label>
+            <button class="btn btn--big" style="width: 100%; margin-top: 15px;" type="submit">Let's Go!</button>
+          </form>
+        </div>
+
+        <div class="panel" style="background: var(--white);">
+          <h2 style="margin-top:0;">Register</h2>
+          <p>Unlock member perks and save seats.</p>
+          <form class="form-grid">
+            <label>Full Name <input type="text" placeholder="Your name" required></label>
+            <label>Email <input type="email" placeholder="you@email.com" required></label>
+            <label>Create Password <input type="password" placeholder="••••••••" required></label>
+            <button class="btn btn--big btn--alt" style="width: 100%; margin-top: 15px;" type="submit">Create Account</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="pill">Nexus Events · Vibrant Pop Nights · <span data-year></span></p>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+
+</html>
