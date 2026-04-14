@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Contact Our Doctors - HealthSync Clinic</title>
+</head>
+<body>
+
+    <nav>
+        <div class="brand-block">
+            <div class="brand-mark">HS</div>
+            <div>
+                <p class="eyebrow">Clinic Management System</p>
+                <h1>HealthSync Clinic</h1>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="booking.html">Appointments</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="booking.html" class="verified-badge">✓ Start Booking</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <span class="verified-tag">✓ 24/7 Support Available</span>
+        <h1 style="margin-top: 15px;">Contact Our Specialists</h1>
+        <p style="margin-bottom: 30px;">Reach out directly to our department leads for urgent inquiries.</p>
+        
+        <section class="panel-grid">
+            <div class="panel">
+                <h3 style="color: var(--primary);">Dr. Sarah Jenkins</h3>
+                <p class="eyebrow">Cardiology</p>
+                <p style="margin-top: 10px; font-weight: bold;">+1 (555) 102-3456</p>
+                <p style="font-size: 0.85rem; color: #666;">Available: Mon-Fri</p>
+            </div>
+            <div class="panel">
+                <h3 style="color: var(--primary);">Dr. Mark Thompson</h3>
+                <p class="eyebrow">Pediatrics</p>
+                <p style="margin-top: 10px; font-weight: bold;">+1 (555) 204-5678</p>
+                <p style="font-size: 0.85rem; color: #666;">Available: Tue-Sat</p>
+            </div>
+            <div class="panel">
+                <h3 style="color: var(--primary);">Dr. Elena Rodriguez</h3>
+                <p class="eyebrow">Orthopedics</p>
+                <p style="margin-top: 10px; font-weight: bold;">+1 (555) 306-7890</p>
+                <p style="font-size: 0.85rem; color: #666;">Available: 24/7 Emergency</p>
+            </div>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
+
+        <div style="max-width: 600px; margin: 0 auto;">
+            <h2 style="text-align: center; color: var(--primary);">Patient Feedback</h2>
+            <p style="text-align: center; font-size: 0.9rem; color: #666; margin-bottom: 25px;">
+                Your experience matters to us. Please share your thoughts.
+            </p>
+            
+            <form id="feedbackForm">
+                <div style="display: flex; gap: 10px;">
+                    <input type="text" placeholder="Your Full Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                
+                <label style="font-size: 0.85rem; font-weight: bold; margin-top: 10px;">Rate Your Visit:</label>
+                <select required>
+                    <option value="">Choose a rating...</option>
+                    <option>5 - Excellent</option>
+                    <option>4 - Very Good</option>
+                    <option>3 - Good</option>
+                    <option>2 - Fair</option>
+                    <option>1 - Poor</option>
+                </select>
+
+                <textarea placeholder="Tell us about your experience..." rows="5" required></textarea>
+                
+                <button type="submit" style="width: 100%;">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

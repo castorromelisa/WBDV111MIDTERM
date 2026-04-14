@@ -1,0 +1,247 @@
+:root {
+    --primary: #004a99;
+    --secondary: #00a8cc;
+    --accent: #e1f5fe;
+    --text: #2c3e50;
+    --white: #ffffff;
+    --gray: #f0f4f8;
+    --success: #107c41;
+    --success-bg: #e6f9f1;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--gray);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* --- Navigation & Brand --- */
+nav {
+    background: var(--primary);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.brand-block {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-mark {
+    background: var(--white);
+    color: var(--primary);
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.eyebrow {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+nav h1 { 
+    font-size: 1.2rem; 
+    color: white; 
+    margin: 0; 
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* --- Badges & Tags --- */
+.verified-tag {
+    background-color: var(--success-bg);
+    color: var(--success);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: 1px solid var(--success);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.verified-badge {
+    color: var(blue);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: inline-flex; /* Added for alignment */
+    align-items: center;
+    gap: 5px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    margin-left: 15px;
+    border: 1px solid var(--primary); /* Reduced border width for elegance */
+    transition: 0.3s ease;
+}
+
+
+/* --- Layout & Panels --- */
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.panel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.panel {
+    background: var(--white);
+    padding: 30px 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 74, 153, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.panel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    border-color: var(--primary);
+}
+
+.panel h2 {
+    color: var(--primary);
+    font-family: 'Arial Black', sans-serif;
+    letter-spacing: -1px;
+}
+
+.panel .eyebrow {
+    margin-top: 8px;
+    font-weight: 700;
+    color: #888;
+}
+
+/* --- Interactive Elements --- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, select, textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+button {
+    background: var(--secondary);
+    color: white;
+    padding: 18px 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 168, 204, 0.3);
+}
+
+button:hover {
+    background: var(--primary);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 74, 153, 0.4);
+}
+
+/* --- Hero Image --- */
+.hospital-hero {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 16px;
+    margin: 25px 0;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 4px solid var(--white);
+}
+
+/* --- Mobile Fixes --- */
+@media (max-width: 768px) {
+    .hospital-hero {
+        height: 250px;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 1.5rem;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-links a {
+        margin-left: 0;
+    }
+}
+.credential-card {
+    padding: 12px 15px !important;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: var(--white);
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.credential-card:hover {
+    border-color: var(--secondary);
+    transform: translateX(5px); /* Moves right slightly on hover */
+    background: var(--accent);
+}
+
+.credential-card strong {
+    font-size: 0.9rem;
+    color: var(--primary);
+}
+
+.credential-card code {
+    font-size: 0.75rem;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    width: fit-content;
+}

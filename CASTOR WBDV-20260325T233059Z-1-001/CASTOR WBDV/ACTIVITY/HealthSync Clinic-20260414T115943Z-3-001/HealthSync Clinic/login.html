@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Patient Portal Login - HealthSync</title>
+</head>
+
+<body>
+    <div>
+        <nav>
+            <div class="brand-block">
+                <div class="brand-mark">HS</div>
+                <div>
+                    <p class="eyebrow">Clinic Management System</p>
+                    <h1>HealthSync Clinic</h1>
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="booking.html">Appointments</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+                <a class="verified-badge">✓ Start Booking</a>
+            </div>
+        </nav>
+        <div>
+
+            <div class="container">
+                <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
+
+                    <div style="flex: 1; min-width: 300px;">
+                        <span class="verified-tag">✓ Secure Patient Portal</span>
+                        <h1 style="margin: 15px 0 10px;">Sign In</h1>
+                        <p style="color: #666; margin-bottom: 25px;">Access your medical dashboard.</p>
+
+                        <form id="loginForm">
+                            <div style="margin-bottom: 15px;">
+                                <label
+                                    style="display: block; font-size: 0.85rem; font-weight: bold; margin-bottom: 5px;">Username</label>
+                                <input id="username" type="text" placeholder="e.g., admin" required
+                                    style="width: 100%;">
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <label
+                                    style="display: block; font-size: 0.85rem; font-weight: bold; margin-bottom: 5px;">Password</label>
+                                <input id="password" type="password" placeholder="••••••••" required
+                                    style="width: 100%;">
+                            </div>
+                            <button type="submit" style="width: 100%;">Login to Dashboard</button>
+                        </form>
+                    </div>
+
+                    <div
+                        style="flex: 0.8; min-width: 280px; background: var(--gray); padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <p class="eyebrow" style="color: var(--primary); margin-bottom: 15px;">Quick Access Roles</p>
+                        <p style="font-size: 0.85rem; color: #666; margin-bottom: 20px;">Click a role to auto-fill the
+                            form:</p>
+
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div class="panel credential-card" onclick="autoFill('admin', 'admin123')">
+                                <strong>Admin Account</strong>
+                                <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+                                    <code>User: admin</code>
+                                    <code>Pass: admin123</code>
+                                </div>
+                            </div>
+
+                            <div class="panel credential-card" onclick="autoFill('staff', 'staff123')">
+                                <strong>Staff Account</strong>
+                                <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+                                    <code>User: staff</code>
+                                    <code>Pass: staff123</code>
+                                </div>
+                            </div>
+
+                            <div class="panel credential-card" onclick="autoFill('user', 'user123')">
+                                <strong>User Account</strong>
+                                <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+                                    <code>User: user</code>
+                                    <code>Pass: user123</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                document.getElementById('loginForm').addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const user = document.getElementById('username').value.toLowerCase().trim();
+                    const pass = document.getElementById('password').value.trim();
+
+                    // Define the roles and their destinations
+                    let redirectUrl = "";
+                    let roleName = "";
+
+                    if (user === 'admin' && pass === 'admin123') {
+                        redirectUrl = 'admin-dashboard.html';
+                        roleName = 'Administrator';
+                    }
+                    else if (user === 'staff' && pass === 'staff123') {
+                        redirectUrl = 'staff-dashboard.html';
+                        roleName = 'Staff Member';
+                    }
+                    else if (user === 'user' && pass === 'user123') {
+                        redirectUrl = 'user-dashboard.html';
+                        roleName = 'Patient';
+                    }
+
+                    if (redirectUrl) {
+                        // Save session data to localStorage
+                        localStorage.setItem('isLoggedIn', 'true');
+                        localStorage.setItem('currentUser', user);
+                        localStorage.setItem('userRole', roleName);
+
+                        alert("Access Granted: Redirecting...");
+                        window.location.href = redirectUrl;
+                    } else {
+                        alert("Invalid credentials. Please use the demo roles on the right.");
+                    }
+                });
+            </script>
+
+
+
+</body>
+
+</html>

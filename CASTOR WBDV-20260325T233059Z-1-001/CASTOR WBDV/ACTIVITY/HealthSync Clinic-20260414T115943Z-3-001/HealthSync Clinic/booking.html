@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Book Appointment - HealthSync Clinic</title>
+</head>
+<body>
+
+    <nav>
+        <div class="brand-block">
+            <div class="brand-mark">HS</div>
+            <div>
+                <p class="eyebrow">Clinic Management System</p>
+                <h1>HealthSync Clinic</h1>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="booking.html">Appointments</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="booking.html" class="verified-badge">✓ Start Booking</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <span class="verified-tag">✓ Secure Online Scheduling</span>
+        <h1 style="margin-top: 15px;">Book an Appointment</h1>
+        <p style="margin-bottom: 30px; color: #666;">
+            Please fill out the form below to secure your consultation slot. 
+            Confirmation will be sent via email within 15 minutes.
+        </p>
+
+        <form id="bookingForm">
+            <div class="panel" style="margin-bottom: 20px; border-left: 5px solid var(--secondary);">
+                <h3 style="margin-bottom: 15px; color: var(--primary);">1. Patient Information</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <input type="text" placeholder="First Name" required>
+                    <input type="text" placeholder="Last Name" required>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                </div>
+            </div>
+
+            <div class="panel" style="margin-bottom: 20px; border-left: 5px solid var(--primary);">
+                <h3 style="margin-bottom: 15px; color: var(--primary);">2. Select Service & Doctor</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <select required>
+                        <option value="">Select Department</option>
+                        <option>Cardiology</option>
+                        <option>Pediatrics</option>
+                        <option>Orthopedics</option>
+                        <option>General Medicine</option>
+                    </select>
+                    <select required>
+                        <option value="">Select Doctor</option>
+                        <option>Dr. Sarah Jenkins</option>
+                        <option>Dr. Mark Thompson</option>
+                        <option>Dr. Elena Rodriguez</option>
+                        <option>Next Available Specialist</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="panel" style="margin-bottom: 30px; border-left: 5px solid var(--success);">
+                <h3 style="margin-bottom: 15px; color: var(--primary);">3. Choose Date & Time</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div>
+                        <label style="font-size: 0.8rem; font-weight: bold; color: #777;">Preferred Date</label>
+                        <input type="date" required style="margin-top: 5px;">
+                    </div>
+                    <div>
+                        <label style="font-size: 0.8rem; font-weight: bold; color: #777;">Preferred Time</label>
+                        <select required style="margin-top: 5px;">
+                            <option value="">Select Time Slot</option>
+                            <option>09:00 AM - 10:00 AM</option>
+                            <option>10:00 AM - 11:00 AM</option>
+                            <option>11:00 AM - 12:00 PM</option>
+                            <option>02:00 PM - 03:00 PM</option>
+                            <option>03:00 PM - 04:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <button type="submit" style="width: 100%; max-width: 400px;">Confirm Appointment</button>
+                <p style="margin-top: 15px; font-size: 0.85rem; color: #888;">
+                    By clicking "Confirm", you agree to our 
+                    <a href="#" style="color: var(--secondary);">Terms of Service</a>.
+                </p>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
